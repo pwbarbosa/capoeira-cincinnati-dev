@@ -1,0 +1,57 @@
+:root {
+    --cb-blue: #253F7A;
+}
+body {
+    font-family: "Montserrat", Sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#mobile_header_title {
+    font-size: 11px;
+}
+
+#header_nav {
+    position:absolute;
+    width: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+}
+
+#header_nav_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header_nav_list .header-nav-item {
+    width: 100%;
+    text-align: left;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+#header_nav_list .header-nav-item.mobile-top {
+    padding: 5px 20px 10px 20px;
+}
+
+#header_top_logo_mobile img {
+    height: 50px;
+    padding: 15px 20px 0 20px;
+}
+
+.hidden {
+    display: none;
+}
+
