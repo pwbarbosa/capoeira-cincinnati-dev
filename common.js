@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     setMenuToggleEvListener();
     setAboutUsEvListener();
+    setValPhilEventListeners()
 });
 
 function setMenuToggleEvListener() {
@@ -20,5 +21,16 @@ function setAboutUsEvListener() {
     aboutUsDiv.addEventListener('click', () => {
         aboutUsItem.classList.toggle('collapsed');
         aboutUsItem.classList.toggle('expanded');
+    });
+}
+
+function setValPhilEventListeners() {
+    const valPhilCollContentElms = document.querySelectorAll('.val-phil-collapsible-content-div');
+
+    valPhilCollContentElms.forEach((elm) => {
+        elm.addEventListener('click', () => {
+            elm.classList.toggle('collapsed');
+            elm.classList.toggle('expanded');
+        });
     });
 }

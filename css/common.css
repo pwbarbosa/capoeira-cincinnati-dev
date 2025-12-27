@@ -9,6 +9,9 @@
 :root {
     --cb-blue: #253F7A;
     --action-yellow: rgb(245, 194, 41);
+    --footer-bg-color: #EBEBEB;
+    --footer-text-color: #393939;
+    --footer-text-color-light: #999999;
 }
 body {
     font-family: "Montserrat", Sans-serif;
@@ -18,8 +21,17 @@ body {
     height: 100vh;
 }
 
+body:has(.nav-expanded) {
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
+    color: var(--cb-blue);
+    font-weight: 600;
+}
+
+a:not(.inline-link) {  
     color: inherit;
     display: flex;
     align-items: center;
@@ -153,6 +165,8 @@ a {
     align-items: unset;
 }
 
+
+
 /* .mobile-top {
     border-top: 1px solid #ddd;
 } */
@@ -206,16 +220,22 @@ a {
     transform: rotate(0deg);
 }
 
-.nav-collapsed #header_nav {
+.nav-collapsed #header_nav,
+.collapsed > ul {
     height: 0;
     overflow: hidden;
 }
-.collapsed > ul,
+
+.expanded > ul {
+    height: fit-content;
+}
+
+/* .collapsed > ul,
 .nav-collapsed #header_nav > ul 
 {
     height: 0;
     overflow: hidden;
-}
+} */
 
 #header_action_buttons {
     display: flex;
@@ -279,8 +299,7 @@ a {
 
 /* Main Section General Start */
 .main-section {
-    width: stretch;
-    padding: 80px 20px 60px 20px;
+    padding: 30px 0px 10px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -289,10 +308,10 @@ a {
 }
 
 .main-section > h2 {
-    border-bottom: solid black;
     font-size: 18px;
     font-weight: 800;
-    width: min-content;
+    border-bottom: solid 2px var(--cb-blue);
+    width:min-content
 }
 /* Main Section General End */
 
@@ -340,6 +359,8 @@ a {
 #learn_more_button {
     background-color: var(--action-yellow);
     color: var(--cb-blue);
+    font-weight: 600;
+    letter-spacing: .5px;
     padding: 5px 20px;
     border-radius: 8px 8px 8px 8px;
     display: flex;
@@ -348,6 +369,175 @@ a {
     width: 150px;
 }
 /* Welcome Section End */
+
+/* Classes & Programs Section Start */
+#youth_and_adults_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.class-program-link {
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.class-program-div {
+    color: white;
+  font-weight: 500;
+  background-color: navy;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 40vh;
+  min-height: 150px;
+  text-shadow: black 1px 1px;
+}
+
+.class-program-div > * {
+    margin: 0;
+}
+
+#youth_and_adults_div h3 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#youth_div {
+    background: url('../images/classes/youth-class-placeholder.png') no-repeat top -15px center/cover;
+    width: 100%;
+}
+
+#adults_div {
+    background: url('../images/classes/adult-class-placeholder.jpg') no-repeat bottom center;
+    background-size: 150%;
+    width: 100%;
+}
+/* Classes & Programs Section End */
+
+/* Instructors Start */
+.instructor-card-div {
+    margin: 10px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* .instructor-card-div > * {
+    flex-grow: 1;
+} */
+
+.instructor-img {
+    width: 125px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.instructor-name-primary {
+    margin: 0;
+    font-weight: bold;
+}
+
+.instructor-name-secondary {
+    margin: 0;
+    font-style: italic;
+}
+
+.instructor-bio-div {
+    height: 150px;
+    overflow: hidden;
+}
+
+.instructor-bio-expander-div, .instructor-bio-collapser-div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.instructor-bio-expand-collapse-div .expand-collapse-svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--cb-blue);
+}
+
+
+
+/* Instructors End */
+
+/* Values Philosophy Section Start */
+#values_philosophy_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0px 15px;
+}
+
+.val-phil-collapsible-content-div {
+    width: 100%;
+    height: fit-content
+}
+.val-phil-collapser-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+    height: 50px;
+    color: var(--cb-blue);
+    font-weight: 600;
+}
+.val-phil-collapser-icon {
+    padding-left: 15px;
+    font-size: 1.5em;
+}
+.val-phil-heading {
+    flex-grow: 1;
+    padding-left: 20px;
+    text-align: left
+}
+
+.val-phil-content-div {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    box-sizing: border-box;
+}
+
+.val-phil-collapsible-content-div.collapsed .val-phil-content-div {
+    max-height: 0;
+    margin-bottom: 15px;
+}
+
+.val-phil-collapsible-content-div.expanded .val-phil-content-div {
+    max-height: 500px;
+    margin-bottom: 15px;
+}
+
+.val-phil-collapsible-content-div.collapsed .minus {
+    display: none;
+}
+
+.val-phil-collapsible-content-div.expanded .plus {
+    display: none;
+}
+
+
+/* Values Philosophy Section End */
 
 /* Whatsapp Icon Start */
 #whatsapp_icon_div {
@@ -374,8 +564,102 @@ a {
 }
 /* Whatsapp Icon End */
 
+/* Footer Start */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-section-divs-container {
+    padding: 30px 20px;
+}
+
+footer,
+#footer_main_div,
+.footer_section_div,
+#footer_copy_privacy_div,
+#footer_socials_and_cboh_logo_div,
+#footer_logo_div,
+#footer_cboh_logo_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_section_div {
+    margin-bottom: 20px;
+}
+
+#footer_logo_img {
+    width:40vw;
+}
+
+footer h3 {
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer h4 {
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--cb-blue);
+    font-size: 18px;
+}
+
+footer ul.footer_link_list,
+footer ul.footer_link_list li {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+footer ul.footer_link_list li a,
+footer p,
+footer h3 {
+    justify-content: center;
+    text-align: center;
+}
+
+#footer_locations_div {
+    margin: 10px auto;
+}
+
+#footer_locations_div p {
+    margin: 0;
+}
+
+#footer_cboh_logo_div img {
+    width: 65vw;
+}
+
+#footer_divider_hr {
+    width: 100vw;
+    height: 1px;
+    background-color: var(--footer-text-color-light);
+    border: none;
+    opacity: .3;
+}
+
+#footer_copy_privacy_div {
+    padding: 10px 20px 30px 20px;
+}
+
+#footer_copy_privacy_div p {
+    color: var(--footer-text-color-light);
+    margin: 5px 0;
+}
+/* Footer End */
+
 * {
-    transition: all 0.3s ease;
+    transition: .3s ease;
+}
+
+.b {
+    font-weight: 600
 }
 
 
