@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     setMenuToggleEvListener();
     setAboutUsEvListener();
+    setClassProgramEventListeners();
     setInstructorBioEventListeners();
     setValPhilEventListeners()
 });
@@ -22,6 +23,16 @@ function setAboutUsEvListener() {
     aboutUsDiv.addEventListener('click', () => {
         aboutUsItem.classList.toggle('collapsed');
         aboutUsItem.classList.toggle('expanded');
+    });
+}
+
+function setClassProgramEventListeners() {
+    const classProgramDivs = document.querySelectorAll('.class-program-div');
+
+    classProgramDivs.forEach((div) => {
+        div.addEventListener('click', () => {
+            div.classList.toggle('expanded');
+        });
     });
 }
 

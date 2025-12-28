@@ -8,6 +8,7 @@
 
 :root {
     --cb-blue: #253F7A;
+    --cb-blue-semi-transparent: rgba(37, 63, 122, 0.8);
     --action-yellow: rgb(245, 194, 41);
     --footer-bg-color: #EBEBEB;
     --footer-text-color: #393939;
@@ -322,7 +323,7 @@ a:not(.inline-link) {
 }
 
 #welcome-image-and-text {
-    background-color: rgba(37, 63, 122, 0.8); /* Semi-transparent background */
+    background-color: var(--cb-blue-semi-transparent);
     color: white;
     font-weight: 900;
     padding: 0px 20px;
@@ -390,16 +391,16 @@ a:not(.inline-link) {
 
 .class-program-div {
     color: white;
-  font-weight: 500;
-  background-color: navy;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-height: 40vh;
-  min-height: 150px;
-  text-shadow: black 1px 1px;
+    font-weight: 500;
+    background-color: navy;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 40vh;
+    min-height: 150px;
+    text-shadow: black 1px 1px;
 }
 
 .class-program-div > * {
@@ -421,6 +422,30 @@ a:not(.inline-link) {
     background-size: 150%;
     width: 100%;
 }
+
+.class-program-div.expanded {
+    max-height: 200vh;
+}
+
+.class-program-div.expanded .class-program-link-text {
+    display: none;
+}
+
+.class-program-info-div {
+    background-color: var(--cb-blue-semi-transparent);
+    display: none;
+}
+
+.class-program-div.expanded .class-program-info-div {
+    display: block;
+}
+
+.class-program-info-div ul {
+    text-align: left;
+    padding-right: 5px;
+    padding-left: 25px;
+}
+
 /* Classes & Programs Section End */
 
 /* Instructors Start */
