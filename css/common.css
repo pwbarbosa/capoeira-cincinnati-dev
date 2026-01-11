@@ -362,12 +362,11 @@ a:not(.inline-link) {
     color: var(--cb-blue);
     font-weight: 600;
     letter-spacing: .5px;
-    padding: 5px 20px;
+    padding: 5px 25px;
     border-radius: 8px 8px 8px 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
 }
 /* Welcome Section End */
 
