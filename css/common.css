@@ -244,7 +244,7 @@ a:not(.inline-link) {
 }
 
 .expanded > ul {
-    height: fit-content;
+    height: 72px;
 }
 
 /* .collapsed > ul,
@@ -871,8 +871,25 @@ footer h3 {
 
 
 /* Tablets and landscape phones */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
   /* Styles for tablets and landscape phones */
+    body:has(.nav-expanded) {
+        overflow: unset;
+    }
+
+    .nav-collapsed #header_nav {
+        overflow: hidden;
+        right: -300px;
+        height: auto;
+    }
+
+    #header_nav {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        right: 0;
+        transition: all 0.3s ease;
+    }
 }
 
 /* Tablets and small laptops */
