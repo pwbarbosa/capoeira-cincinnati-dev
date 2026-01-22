@@ -381,6 +381,7 @@ a:not(.inline-link) {
     padding: 10px 15px;
     border-radius: 0px 0px 10px 10px;
     position: relative;
+    max-width: 800px;
 }
 
 #journey_learn_more_div {
