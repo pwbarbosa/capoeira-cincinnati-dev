@@ -12,7 +12,8 @@ function scrollIfUrlHashExists() {
     if (window.location.hash) {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.scrollTo({ top: 155, behavior: 'smooth' });
         }
     }
 }
