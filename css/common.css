@@ -706,6 +706,14 @@ a:not(.inline-link) {
     border-radius: 10px;
 }
 
+.photo-credit {
+    text-align: right;
+    font-weight: 400;
+    font-size: .8em;
+    padding-right: 5px;
+    color: var(--footer-text-color);
+}
+
 .location-info-div > * {
     margin: 5px 0;
     text-align: center;
