@@ -467,8 +467,8 @@ a:not(.inline-link) {
 }
 
 #adults_div {
-    background: url('../images/classes/adult-class-placeholder.jpg') no-repeat top 40% center/cover;
-    background-size: 150%;
+    background: url('../images/classes/adult-class-placeholder.jpg') no-repeat top 38% center/cover;
+    /* background-size: 150%; */
     width: 100%;
 }
 
@@ -1087,5 +1087,17 @@ footer h3 {
             max-height: 350px;
             width: 100vw;
         }
+    }
+}
+
+@media (min-width: 425px) and (max-width: 575.99px) {
+    #adults_div {
+        background-position-y: calc(38% + (100vw - 425px)/10);
+    }
+}
+
+@media (min-width: 576px) {
+    #youth_and_adults_div {
+        flex-direction: row;
     }
 }
